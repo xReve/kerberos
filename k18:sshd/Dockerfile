@@ -1,7 +1,7 @@
 FROM fedora:27
 LABEL author="eescriba"
 LABEL description="SSH SERVER"
-RUN dnf -y install openssh-server openssh-clients krb5-workstation vim procps tree
+RUN dnf -y install openssh-server openssh-clients krb5-workstation passwd vim procps tree
 RUN mkdir /opt/docker
 COPY * /opt/docker/
 WORKDIR /opt/docker
