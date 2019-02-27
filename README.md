@@ -13,3 +13,17 @@ CONFIG SERVER KERBEROS
 
 **k18:sshd**
 CONFIG SSH KERBEROS
+
+**NOTA**
+
+Primer engegar el kerberos abans que el sshd
+
+docker run --rm --name kserver.edt.org -h kserver.edt.org --network mynet -d k18:kserver
+
+docker run --rm --name sshd.edt.org -h sshd.edt.org --network mynet -d k18:sshd
+
+docker run --rm --name khost -h khost --network mynet -it k18:hostpam
+
+
+
+
